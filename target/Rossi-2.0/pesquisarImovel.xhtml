@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="./tempInterno.xhtml"
+                >
+
+    <ui:define name="deck">
+        <h4>Pesquisa de Imóvel</h4>
+        <p:commandButton value="Pesquisar" ajax="false" action="#{imovelMBOLD.pesquisar()}" />
+        <p:commandButton value="Novo" ajax="false" action="novoImovel" />
+        <p:commandButton value="Limpar" ajax="false" action="#{imovelMBOLD.limpar()}" />
+    </ui:define>
+
+    <ui:define name="acao">
+        <h:panelGrid columns="2">
+            Cod. imóvel: <p:inputText label="Cód. Imóvel" value="#{imovelMBOLD.imovel.codigo}" />
+            Endereço: <p:inputText label="Endereço" value="#{imovelMBOLD.imovel.endereco}" />
+            Proprietário: <p:inputText label="Proprietário" value="#{imovelMBOLD.imovel.proprietario}" />
+        </h:panelGrid>
+    </ui:define>
+
+</ui:composition>

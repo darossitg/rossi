@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="./tempInterno.xhtml"
+                >
+
+    <ui:define name="deck">
+        <h4>Pesquisa de Cliente</h4>
+        <p:commandButton value="Pesquisar" ajax="false" action="#{clienteMB.pesquisar()}" />
+        <p:commandButton value="Novo" ajax="false" action="novoCliente" />
+        <p:commandButton value="Limpar" ajax="false" action="#{clienteMB.limpar()}" />
+    </ui:define>
+
+    <ui:define name="acao">
+        <h:panelGrid columns="2">
+            Cod. cliente: <p:inputText value="#{clienteMB.cliente.codigo}" />
+            Nome: <p:inputText value="#{clienteMB.cliente.nome}" />
+        </h:panelGrid>
+    </ui:define>
+
+</ui:composition>

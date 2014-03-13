@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="./tempInterno.xhtml"
+                
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="deck">
+        <h4>Novo Imóvel</h4>
+        <p:commandButton value="Salvar" ajax="false" action="#{imovelMB.salvarImovel()}" />
+        <p:commandButton value="Pesquisar" ajax="false" action="pesquisarImovel" immediate="true" />
+    </ui:define>
+
+    <ui:define name="acao">
+        <h:panelGrid columns="2">
+            * Cod. imóvel: <p:inputText label="Cód. imóvel" value="#{imovelMB.imovel.imovelCod}" required="true">
+                <f:convertNumber />
+            </p:inputText>
+            
+            * Endereço: <p:inputText label="Endereço" value="#{imovelMB.imovel.imovelEnd}" required="true" />
+            
+            * Proprietário: <p:inputText label="Proprietário" value="#{imovelMB.imovel.imovelProp}" required="true" />
+            
+            * Valor (R$): <p:inputText label="Valor" value="#{imovelMB.imovel.imovelValor}" required="true">
+                <f:convertNumber />
+            </p:inputText>
+            
+            Descrição do imóvel: <p:editor value="#{imovelMB.imovel.imovelDes}" width="500" height="140" />
+            
+        </h:panelGrid>
+    </ui:define>
+
+</ui:composition>

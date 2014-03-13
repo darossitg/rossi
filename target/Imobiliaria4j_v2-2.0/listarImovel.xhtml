@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./tempInterno.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="deck">
+        <h4>Listagem de Imóvel</h4>
+        <p:commandButton value="Pesquisar" ajax="false" action="pesquisarImovel" />
+        <p:commandButton value="Novo" ajax="false" action="novoImovel" />
+    </ui:define>
+      
+    <ui:define name="acao">
+       <p:dataTable id="dataTable" var="produto" 
+                    value="#{produtoMB.lista}"  
+                     paginator="true" rows="15"  
+                     >   
+        <f:facet name="header">  
+            Ajax Pagination  
+        </f:facet>  
+  
+        <p:column>  
+            <f:facet name="header">  
+                <h:outputText value="Código do Produto" />  
+            </f:facet>  
+            <h:outputText value="#{produto.prodCodigo}" />  
+        </p:column>  
+  
+        <p:column>  
+            <f:facet name="header">  
+                <h:outputText value="Descrição" />  
+            </f:facet>  
+            <h:outputText value="#{produto.prodDescricao}" />  
+        </p:column>  
+  
+        <p:column>  
+            <f:facet name="header">  
+                <h:outputText value="Quantidade" />  
+            </f:facet>  
+            <h:outputText value="#{produto.prodQuantidadeAtual}" />  
+        </p:column>  
+        <p:column>  
+            <f:facet name="header">  
+                <h:outputText value="Valor" />  
+            </f:facet>  
+            <h:outputText value="#{produto.prodValorUnitario}" />  
+        </p:column>  
+        <p:column>  
+            <f:facet name="header">  
+                <h:outputText value="Referência" />  
+            </f:facet>  
+                   <h:outputText value="#{produto.prodReferencia}" />  
+        </p:column>  
+        <p:column>  
+            <f:facet name="header">  
+                <h:outputText value="Tamanho" />  
+            </f:facet>  
+                   <h:outputText value="#{produto.prodTamanho}" />  
+       </p:column>  
+        <p:column>  
+            <f:facet name="header">  
+                <h:outputText value="Observações" />  
+            </f:facet>  
+               <h:outputText value="#{produto.prodObservacao}" />  
+         </p:column> 
+       </p:dataTable>  
+    </ui:define>
+ </ui:composition>
+ 
+

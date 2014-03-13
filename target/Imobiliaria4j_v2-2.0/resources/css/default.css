@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+}
+
+#header {    
+    background-color: #E8E9EA;
+    font-family: georgia;
+}
+
+h4 {
+    font-size: 18pt;
+    font-family: georgia;
+    border-bottom: 1px solid #ccc;
+}
+
+#bemvindo {
+    width: 100%;
+    text-align: center;
+    padding-top: 10%;
+    font-size: 20pt;
+    color: #ccc;
+}
+
+#login{  
+    text-align: center;
+    padding-top: 10%;
+    padding-left: 28%;
+    font-size: 20pt;
+    color: #000000;
+    font-style: italic;
+    font-family: sans-serif;
+}
